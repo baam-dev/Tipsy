@@ -39,23 +39,47 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-
+        //        func showAlert() {
+        //            let alert = UIAlertController(title: "Alert!", message: "Make sure to fill the bill input!", preferredStyle: .alert)
+        //            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: {action in
+        //            }))
+        //            alert.addAction(UIAlertAction(title: "Help me", style: .default, handler: {action in
+        //            }))
+        //            present(alert, animated: true)
+        //        }
+        func showActionSheet() {
+            
+            let actionSheet = UIAlertController(title: "Alert", message: "Enter your bill total to calculate!", preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: {action in
+                print("Dismiss pressed")
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Get Help", style: .default, handler: {action in
+                print("Help pressed")
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Close This App", style: .destructive, handler: {action in
+                print("Close pressed")
+            }))
+            present(actionSheet, animated: true)
+        }
+        
         let bill = billTextField.text!
         // if the field is not empty
         if bill != "" {
-        billTotal = Double(bill)!
-        perPerson = String(format: "%.2f", (billTotal * (1 + tipFee)) / Double(numberOfPeople))
+            billTotal = Double(bill)!
+            perPerson = String(format: "%.2f", (billTotal * (1 + tipFee)) / Double(numberOfPeople))
+        } else {
+            showActionSheet()
         }
         
         self.performSegue(withIdentifier: "showResult", sender: self)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let resultVC = segue.destination as! ResultsViewController
         resultVC.result = perPerson
         resultVC.numOfPip = numberOfPeople
         resultVC.tip = Int(tipFee * 100)
     }
-
+    
 }
 

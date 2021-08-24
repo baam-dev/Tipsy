@@ -270,8 +270,8 @@
                                     <action selector="recalcPressed:" destination="Dnf-m2-FPm" eventType="touchUpInside" id="dSq-MN-nji"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGt-bn-sCv">
-                                <rect key="frame" x="32" y="349" width="350" height="122"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGt-bn-sCv">
+                                <rect key="frame" x="50" y="305" width="314" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="117" id="6ek-Uw-tyb"/>
                                 </constraints>
